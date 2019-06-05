@@ -3,7 +3,6 @@ import Web3 from 'web3';
 import './App.css';
 
 let interval;
-let intervalB;
 
 function translateNetwork(id) {
   const networks = {
@@ -16,7 +15,7 @@ function translateNetwork(id) {
     100: 'xDai',
     5777: 'Private',
   }
-  return networks[id] || 'Unknown'
+  return networks[id] || 'Unknown';
 }
 
 
@@ -113,7 +112,7 @@ class App extends React.Component {
   render(){
     let {connected, account, provider, network, accountsLocked, injectedWeb3Provider, diffProvidersDetected } = this.state;
 
-    let message = diffProvidersDetected == true ? <div style={{color: 'red'}}> Alert : Two different web3 providers, turn one off !!!! </div> : <br />;
+    let message = diffProvidersDetected == true ? <div style={{color: 'red'}}> Alert : Two different web3 providers <hr /> Go to chrome://extensions/  and turn one off !!!! </div> : <br />;
     return (
       <div className="App">
         <header className="App-header">
@@ -130,9 +129,9 @@ class App extends React.Component {
             <hr />
             Account : {account}
           </div>
-          
           <br />
           {message}
+          <br />
         </header>
       </div>
     );
